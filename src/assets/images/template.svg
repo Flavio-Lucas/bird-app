@@ -5,8 +5,8 @@
     <path id="c" d="M562.17 559.36H325.28V382.84h236.89v176.52z"/>
     <path id="d" d="M562.17 355.26H325.28V62.91h236.89v292.35z"/>
   </defs>
-  <use style="fill: var(--icon-color, black)" xlink:href="#a"/>
-  <use style="fill: var(--icon-color, black)" xlink:href="#b"/>
-  <use style="fill: var(--icon-color, black)" xlink:href="#c"/>
-  <use style="fill: var(--icon-color, black)" xlink:href="#d"/>
+  <use style="fill: var(--icon-color, black); transition: fill .2s linear" xlink:href="#a"/>
+  <use style="fill: var(--icon-color, black); transition: fill .2s linear" xlink:href="#b"/>
+  <use style="fill: var(--icon-color, black); transition: fill .2s linear" xlink:href="#c"/>
+  <use style="fill: var(--icon-color, black); transition: fill .2s linear" xlink:href="#d"/>
 </svg>

@@ -19,7 +19,6 @@
     background: var(--bird-dark);
     box-shadow: 0 1px 14px #19282f ;
     border-radius: 25px 25px 0 0;
-  
     &--icon {
       padding: 1.4rem;
       border-radius: 40%;
@@ -27,7 +26,6 @@
       overflow: hidden;
       --icon-color: var(--bird-dark-contrast);
       &--selected {
-        
       --icon-color: var(--bird-primary);
       }
       ion-icon {
