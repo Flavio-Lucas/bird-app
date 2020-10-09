@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="59.43 61.91 505.75 500.45">
+  <defs>
+    <path id="a" d="M60.43 62.91h236.88v176.51H60.43V62.91z"/>
+    <path id="b" d="M60.43 267.01h236.88v292.35H60.43V267.01z"/>
+    <path id="c" d="M562.17 559.36H325.28V382.84h236.89v176.52z"/>
+    <path id="d" d="M562.17 355.26H325.28V62.91h236.89v292.35z"/>
+  </defs>
+  <use style="fill: var(--icon-color, black)" xlink:href="#a"/>
+  <use style="fill: var(--icon-color, black)" xlink:href="#b"/>
+  <use style="fill: var(--icon-color, black)" xlink:href="#c"/>
+  <use style="fill: var(--icon-color, black)" xlink:href="#d"/>
+</svg>
