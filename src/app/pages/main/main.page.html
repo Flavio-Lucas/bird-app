@@ -1,21 +1,23 @@
 <div class="main">
   <div class="main--body">
     <router-outlet></router-outlet>
-    
   </div>
   <div class="main--footer">
     <div class="main--footer--icon ion-activatable" 
-    [ngClass]="{ 'main--footer--icon--selected': currentSelectedFooter === footerState.CATEGORIES }">
+    [ngClass]="{ 'main--footer--icon--selected': currentSelectedFooter === footerState.CATEGORIES }"
+    routerLink="/main/categories">
       <ion-ripple-effect></ion-ripple-effect>
       <ion-icon src="../../assets/images/template.svg"></ion-icon>
     </div>
     <div class="main--footer--icon ion-activatable " 
-    [ngClass]="{ 'main--footer--icon--selected': currentSelectedFooter === footerState.ALL_COMMENTS }">
+    [ngClass]="{ 'main--footer--icon--selected': currentSelectedFooter === footerState.ALL_COMMENTS }"
+    routerLink="/main/all-comments">
       <ion-ripple-effect></ion-ripple-effect>
       <ion-icon src="../../assets/images/mensages.svg"></ion-icon>
     </div>
     <div class="main--footer--icon ion-activatable " 
-    [ngClass]="{ 'main--footer--icon--selected': currentSelectedFooter === footerState.MY_COMMENTS }">
+    [ngClass]="{ 'main--footer--icon--selected': currentSelectedFooter === footerState.MY_COMMENTS }"
+    routerLink="/main/my-comments">
       <ion-ripple-effect></ion-ripple-effect>
       <ion-icon src="../../assets/images/home.svg"></ion-icon>
     </div>
