@@ -46,4 +46,20 @@ export class CommentInteractor {
       .catch(() => ({ success: undefined, error: 'ocorreu um erro o buscar no cache por favor tente novamente' }));
     }
   //#endregion
+
+  //#region Http Methods
+
+    /**
+     * Metodo q retorna todos os comentários
+     */
+    public async getAllComments(): Promise<CommentProxy[]> {
+      if (environment.mockupEnabled){}
+      // return await getAllCommentsMockup();
+      // TODO: implementar o mockup
+
+      // TODO: Fazer requisição http
+      return ;
+    }
+
+  //#endregion
 }
