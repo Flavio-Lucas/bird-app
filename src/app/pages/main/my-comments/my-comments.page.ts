@@ -1,6 +1,7 @@
 //#region imports
 import { Component, OnInit } from '@angular/core';
 import { CommentProxy, getFakeCurrentProxy } from 'src/app/models/proxies/comment.proxy';
+import { CommentService } from 'src/app/services/comment/comment.service';
 
 //#endregion
 
@@ -20,7 +21,9 @@ export class MyCommentsPage implements OnInit {
   /**
    * classe contrutora padrão
    */
-  constructor() { }
+  constructor(
+    private readonly comment: CommentService,
+  ) { }
 
   //#endregion
 
@@ -28,16 +31,14 @@ export class MyCommentsPage implements OnInit {
   /**
    * A lista de comentáios feitos por mim;
    */
-  public listComments: CommentProxy[] = [
-    getFakeCurrentProxy(),
-    getFakeCurrentProxy(),
-    getFakeCurrentProxy(),
-    getFakeCurrentProxy(),
-    getFakeCurrentProxy()
-  ];
+  public listComments: CommentProxy[] = [];
 
   //#endregion
+  //#region lifeCicle Events
 
+  public async ngOnInit(): Promise<void> {
+    this.listComments = await this.comment.getMyComments();
+  }
   //#region public methods
 
   /**
@@ -54,7 +55,6 @@ export class MyCommentsPage implements OnInit {
   }
   //#endregion
 
-  ngOnInit(){
-  }
+  
 
 }

@@ -13,6 +13,9 @@ registerLocaleData(pt);
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { registerLocaleData } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { IonicStorageModule } from '@ionic/storage';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,12 @@ import { registerLocaleData } from '@angular/common';
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    IonicStorageModule.forRoot({
+      name: environment.config.dbName,
+      driverOrder: ['indexeddb', 'localstorage']
+    }),
   ],
   providers: [
     StatusBar,
