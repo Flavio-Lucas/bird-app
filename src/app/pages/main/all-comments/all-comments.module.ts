@@ -17,6 +17,8 @@ import { CommentItemModule } from 'src/app/components/comment-item/comment-item.
     AllCommentsPageRoutingModule,
     CommentItemModule,
   ],
-  declarations: [AllCommentsPage]
+  declarations: [
+    AllCommentsPage
+  ]
 })
 export class AllCommentsPageModule {}

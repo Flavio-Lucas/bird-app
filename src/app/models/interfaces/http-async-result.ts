@@ -1,5 +1,11 @@
+//#region Imports
+
+import { HttpErrorResponse } from '@angular/common/http';
+
+//#endregion
+
 /**
- * interface que representa valores buscados no cache
+ * A interface que representa o resultado de uma requisição HTTP de forma assincrona
  */
 export interface HttpAsyncResult<TProxy> {
   /**
@@ -9,5 +15,5 @@ export interface HttpAsyncResult<TProxy> {
   /**
    * caso dê errado, aqui vai constar a mensagem de erro
    */
-  error: string;
+  error?: HttpErrorResponse;
 }
