@@ -15,8 +15,11 @@ export const environment = {
     baseUrl: 'http://localhost:4000',
     comment: {
       list: '/comments?page={currentPage}&maxItens={maxItens}',
-    }
-  }
+    },
+    category: {
+      list: '/categories?page={currentPage}&maxItens={maxItens}',
+    },
+  },
 };
 
 /*
