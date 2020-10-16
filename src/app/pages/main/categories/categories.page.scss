@@ -1,5 +1,5 @@
 .categories {
-  padding: 0 2.4rem;
+  padding: 2rem 2.4rem 0 2.4rem;
   display: flex;
   flex-wrap: wrap;
   max-height: 100%;
@@ -19,30 +19,6 @@
 
     bird-category-item {
       width: 100%;
-    }
-
-  }
-  
-  &--add-item {
-    border: 2px dashed var(--bird-primary-dark);
-    border-radius: 2.5rem;
-    padding: 1.6rem .5rem;
-    display: flex;
-    flex-direction: column;
-    height: 15rem;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-
-    ion-icon {
-      font-size: 5rem;
-    }
-    p {
-      font-size: 1.4rem;
-      color: var(--bird-primary);
-      font-weight: bold;
-      text-align: center;
     }
 
   }
