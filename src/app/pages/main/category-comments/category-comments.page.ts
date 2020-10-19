@@ -33,7 +33,7 @@ export class CategoryCommentsPage extends TrackablePage implements OnInit, OnDes
 
     this.categoryId = Number(this.route.snapshot.paramMap.get('categoryId')) || 0;
     if (this.categoryId === 0) {
-      this.router.navigateByUrl('/main/categories');
+      return void this.router.navigateByUrl('/main/categories');
     }
     this.currentScrollSubscription = this.currentScrollFrameSubject.pipe(
       throttleTime(16),
@@ -68,6 +68,10 @@ export class CategoryCommentsPage extends TrackablePage implements OnInit, OnDes
   //#endregion
 
   //#region Public Properties
+  /**
+   * A identificação da categoria
+   */
+  public readonly categoryId: number;
 
   /**
    * A lista com todos os comentários
@@ -84,13 +88,6 @@ export class CategoryCommentsPage extends TrackablePage implements OnInit, OnDes
    */
   public isLoadingData: boolean;
 
-  //#endregion
-
-  //#region Private Properties
-  /**
-   * A identificação da categoria
-   */
-  private readonly categoryId: number;
   //#endregion
 
   //#region LifeCycle Events
