@@ -43,3 +43,21 @@ export async function getAllCommentsMockup(currentPage: number, maxItens: number
     success: paginated,
   };
 }
+
+// tslint:disable-next-line: max-line-length
+export async function getCommentsByCategoryIdMockup(currentPage: number, maxItens: number): Promise<HttpAsyncResult<PaginatedCommentProxy>> {
+  const paginated = {
+    pageCount: 5,
+    currentPage,
+    items: [],
+    maxItens,
+  };
+
+  for (let i = 0; i < maxItens; i++){
+    paginated.items.push(getFakeCurrentProxy());
+  }
+
+  return {
+    success: paginated,
+  };
+}

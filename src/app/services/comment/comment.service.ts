@@ -64,5 +64,20 @@ export class CommentService {
     return success;
   }
 
+  public async getCommentsByCategoryId(categoryId: number, currentPage: number, maxItens: number): Promise<PaginatedCommentProxy>{
+    const { error, success } = await this.interactor.getCommentsByCategoryId(categoryId, currentPage, maxItens);
+
+    if (error){
+      return {
+        pageCount: 1,
+        currentPage: 1,
+        items: [],
+        maxItens,
+      };
+    }
+
+    return success;
+  }
+
   //#endregion
 }

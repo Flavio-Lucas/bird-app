@@ -19,5 +19,20 @@
     font-weight: bold;
     text-align: center;
   }
+}
 
+.bird--back-button {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.2rem;
+  background-color: var(--bird-primary-dark);
+  height: 6rem;
+  width: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  ion-icon {
+    font-size: 1.6rem;
+  }
 }

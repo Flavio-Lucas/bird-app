@@ -8,7 +8,7 @@ import { StorageAsyncResult } from 'src/app/models/interfaces/storage-async-resu
 import { CommentProxy } from 'src/app/models/proxies/comment.proxy';
 import { PaginatedCommentProxy } from 'src/app/models/proxies/paginated-comment.proxy';
 import { environment } from 'src/environments/environment';
-import { getAllCommentsMockup, getMyCommentsMockup } from './comment.mockup';
+import { getAllCommentsMockup, getCommentsByCategoryIdMockup, getMyCommentsMockup } from './comment.mockup';
 
 //#endregion
 
@@ -65,8 +65,27 @@ export class CommentInteractor {
       return await this.http.get<PaginatedCommentProxy>(url)
       .toPromise()
       .then(success => ({ success, error: undefined }))
-      .catch(error => ({ success: undefined, error  }));
+      .catch(error => ({ success: undefined, error }));
     }
 
+    /**
+     * Metodo q retorna todos os comentários de uma categoria
+     */
+    // tslint:disable-next-line: max-line-length
+    public async getCommentsByCategoryId(categoryId: number, currentPage: number, maxItens: number): Promise<HttpAsyncResult<PaginatedCommentProxy>> {
+      if (environment.mockupEnabled) {
+        return await getCommentsByCategoryIdMockup(currentPage, maxItens);
+      }
+
+      const url = environment.api.comment.listByCategoryId
+        .replace('', categoryId.toString())
+        .replace('', currentPage.toString())
+        .replace('', maxItens.toString());
+
+      return await this.http.get<PaginatedCommentProxy>(url)
+      .toPromise()
+      .then(success => ({ success, error: undefined }))
+      .catch(error => ({ success: undefined, error }));
+    }
   //#endregion
 }
