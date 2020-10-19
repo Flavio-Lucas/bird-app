@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { CategoryCommentsPage } from './category-comments.page';
+import { CreateCommentPage } from './create-comment.page';
 
 const routes: Routes = [
-  { path: '', component: CategoryCommentsPage },
+  { path: '', component: CreateCommentPage }
 ];
 
 @NgModule({
@@ -15,4 +15,4 @@ const routes: Routes = [
     RouterModule
   ],
 })
-export class CategoryCommentsPageRoutingModule {}
+export class CreateCommentPageRoutingModule {}

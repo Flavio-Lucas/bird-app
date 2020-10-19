@@ -1,7 +1,8 @@
 <div class="categories" (scroll)="onScroll($event)">
   
   <div class="categories--item">
-    <div class="bird--add-item ion-activatable">
+    <div class="bird--add-item ion-activatable"
+        [routerLink] = "['/main/categories', category.id, '/comment' ]">
       <ion-ripple-effect></ion-ripple-effect>
       <ion-icon src="assets/images/add_icon.svg" ></ion-icon>
       <p>Adicionar novo item</p>

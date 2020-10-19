@@ -4,19 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { MainPageRoutingModule } from './main-routing.module';
+import { CreateCommentPageRoutingModule } from './create-comment-routing.module';
 
-import { MainPage } from './main.page';
+import { CreateCommentPage } from './create-comment.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MainPageRoutingModule
+    CreateCommentPageRoutingModule
   ],
-  declarations: [
-    MainPage
-  ]
+  declarations: [CreateCommentPage]
 })
-export class MainPageModule {}
+export class CreateCommentPageModule {}
