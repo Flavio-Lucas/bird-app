@@ -1,0 +1,56 @@
+.comment {
+  padding: 0 2.4rem;
+  max-height: 100%;
+  overflow-y: auto ;
+  padding-bottom: 2.4rem;
+
+
+  .bird--input {
+    margin-top: 2.4rem;
+  }
+
+  &--avatar {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 2.4rem;
+    &--item {
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      width: 6rem;
+      height: 6rem;
+
+      border-radius: 1.2rem;
+      &--containner {
+        padding: 1rem;
+      }
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+
+      &:nth-child(4n) {
+        margin-right: 0;
+      }
+      &--selected {
+        border: .4rem solid var(--bird-light);
+        padding: 1.1rem;
+      }
+    }
+  }
+  &--buttons {
+    display: flex;
+    margin-top: 2.4rem;
+    width: 100%;
+    background: none;
+
+    button:first-child {
+      margin-right: 1.2rem;
+    }
+    button:last-child {
+      --send-button-width: calc(100%  - 6rem - 1.2rem);
+    }
+  }
+}
