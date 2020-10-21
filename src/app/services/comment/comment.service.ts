@@ -2,6 +2,7 @@
 
 import { Injectable } from '@angular/core';
 import { CommentInteractor } from 'src/app/interactors/comment/comment.interactor';
+import { CreateCommentPayload } from 'src/app/models/payloads/create-comment.payload';
 import { CommentProxy } from 'src/app/models/proxies/comment.proxy';
 import { PaginatedCommentProxy } from 'src/app/models/proxies/paginated-comment.proxy';
 
@@ -79,5 +80,17 @@ export class CommentService {
     return success;
   }
 
+  /**
+   * metodo que cria um novo comentário
+   *
+   * @param payload conteudo do comentário
+   */
+  public async createComment(payload: CreateCommentPayload): Promise<[boolean, string]>{
+    const { error } = await this.interactor.createComment(payload);
+    if (error) {
+      return [false, 'Ocorreu um erro ao criar o comentário, tente novamente'];
+    }
+    return [true, 'Comentário criado com sucesso'];
+  }
   //#endregion
 }

@@ -2,6 +2,7 @@
 
 import { HttpAsyncResult } from 'src/app/models/interfaces/http-async-result';
 import { StorageAsyncResult } from 'src/app/models/interfaces/storage-async-result';
+import { CreateCommentPayload } from 'src/app/models/payloads/create-comment.payload';
 import { CommentProxy, getFakeCurrentProxy } from 'src/app/models/proxies/comment.proxy';
 import { PaginatedCommentProxy } from 'src/app/models/proxies/paginated-comment.proxy';
 
@@ -60,4 +61,17 @@ export async function getCommentsByCategoryIdMockup(currentPage: number, maxIten
   return {
     success: paginated,
   };
+
+}
+/**
+ * Metodo que retorna as informações de um comentario criado com sucesso
+ *
+ * @param payload Informações de um comentário
+ */
+export async function createCommentMockup(payload: CreateCommentPayload): Promise<HttpAsyncResult<CommentProxy>>{
+  await new Promise(resolve => setTimeout(resolve, 1_500));
+
+  return {
+    success: getFakeCurrentProxy(),
+  }
 }
