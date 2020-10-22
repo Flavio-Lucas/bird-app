@@ -73,5 +73,5 @@ export async function createCommentMockup(payload: CreateCommentPayload): Promis
 
   return {
     success: getFakeCurrentProxy(),
-  }
+  };
 }

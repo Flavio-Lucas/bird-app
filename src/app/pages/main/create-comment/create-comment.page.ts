@@ -56,7 +56,7 @@ export class CreateCommentPage {
   public isSendingForm: boolean;
 
   /**
-   * Form builder
+   * Aponta para o formulário
    */
   public formGroup: FormGroup;
 
@@ -64,10 +64,6 @@ export class CreateCommentPage {
    * A identificação da categoria
    */
   public readonly categoryId: number;
-
-  //#endregion
-
-  //#region Public Properties
 
   /**
    * Lista de avatares disponiveis para o usuário
@@ -126,7 +122,7 @@ export class CreateCommentPage {
       return ;
     }
 
-    await this.router.navigateByUrl('/main/categoryies/${ this.categoryId }');
+    await this.router.navigateByUrl('/main/categories/${ this.categoryId }');
 
   }
 

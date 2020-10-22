@@ -4,9 +4,11 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { HttpAsyncResult } from 'src/app/models/interfaces/http-async-result';
+import { CreateCategoryPayload } from 'src/app/models/payloads/create-category.payload';
+import { CategoryProxy } from 'src/app/models/proxies/category.proxy';
 import { PaginatedCategoryProxy } from 'src/app/models/proxies/paginated-category.proxy';
 import { environment } from 'src/environments/environment';
-import { getCategoriesMockup } from './category.mockup';
+import { createCategoryMockup, getCategoriesMockup } from './category.mockup';
 
 //#endregion
 
@@ -46,6 +48,22 @@ export class CategoryInteractor {
     .toPromise()
     .then(success => ({ success, error: undefined }))
     .catch(error => ({ success: undefined, error  }));
+  }
+
+  /**
+   * metodo que cria um novo comentário
+   *
+   * @param payload conteudo do comentário
+   */
+  public async createCategory(payload: CreateCategoryPayload): Promise<HttpAsyncResult<CategoryProxy>> {
+    if (environment.mockupEnabled) {
+      return await createCategoryMockup(payload);
+    }
+
+    return await this.http.post<CategoryProxy>(environment.api.comment.create, payload)
+    .toPromise()
+    .then(success => ({ success, error: undefined }))
+    .catch(error => ({ success: undefined, error }));
   }
 
   //#endregion

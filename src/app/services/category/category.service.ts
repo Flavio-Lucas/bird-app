@@ -2,6 +2,7 @@
 
 import { Injectable } from '@angular/core';
 import { CategoryInteractor } from 'src/app/interactors/category/category.interactor';
+import { CreateCategoryPayload } from 'src/app/models/payloads/create-category.payload';
 import { PaginatedCategoryProxy } from 'src/app/models/proxies/paginated-category.proxy';
 
 //#endregion
@@ -48,6 +49,20 @@ export class CategoryService {
 
     return success;
   }
+
+  /**
+   * metodo que cria um novo comentário
+   *
+   * @param payload conteudo do comentário
+   */
+  public async createCategory(payload: CreateCategoryPayload): Promise<[boolean, string]>{
+    const { error } = await this.interactor.createCategory(payload);
+    if (error) {
+      return [false, 'Ocorreu um erro ao criar a categoria, tente novamente'];
+    }
+    return [true, 'Categoria criada com sucesso'];
+  }
+  //#endregion
 
   //#endregion
 }

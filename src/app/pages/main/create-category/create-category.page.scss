@@ -1,37 +1,31 @@
-.comment {
+.category {
   padding: 0 2.4rem;
   max-height: 100%;
   overflow-y: auto ;
   padding-bottom: 2.4rem;
-
-
+  
   .bird--input {
     margin-top: 2.4rem;
   }
 
   &--avatar {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
     margin-top: 2.4rem;
-    
+
     &--item {
       padding: 1.5rem;
       position: relative;
       overflow: hidden;
       width: 6rem;
       height: 6rem;
-
       border-radius: 1.2rem;
+
       &--containner {
         padding: 1rem;
       }
-
-      img {
-        height: 100%;
-        width: 100%;
-      }
-
       &:nth-child(4n) {
         margin-right: 0;
       }

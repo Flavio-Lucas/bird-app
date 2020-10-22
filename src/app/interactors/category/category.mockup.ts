@@ -1,7 +1,8 @@
 //#region imports
 
 import { HttpAsyncResult } from 'src/app/models/interfaces/http-async-result';
-import { getFakeCategoryProxy } from 'src/app/models/proxies/category.proxy';
+import { CreateCategoryPayload } from 'src/app/models/payloads/create-category.payload';
+import { CategoryProxy, getFakeCategoryProxy } from 'src/app/models/proxies/category.proxy';
 import { PaginatedCategoryProxy } from 'src/app/models/proxies/paginated-category.proxy';
 
 //#endregion
@@ -26,5 +27,18 @@ export async function getCategoriesMockup(currentPage: number, maxItens: number)
 
   return {
     success: paginated,
+  };
+}
+
+/**
+ * Metodo que retorna as informações de um comentario criado com sucesso
+ *
+ * @param payload Informações de um comentário
+ */
+export async function createCategoryMockup(payload: CreateCategoryPayload): Promise<HttpAsyncResult<CategoryProxy>>{
+  await new Promise(resolve => setTimeout(resolve, 1_500));
+
+  return {
+    success: getFakeCategoryProxy(),
   };
 }
