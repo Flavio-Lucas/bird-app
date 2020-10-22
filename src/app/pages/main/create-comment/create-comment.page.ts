@@ -139,6 +139,7 @@ export class CreateCommentPage {
     const toast = await this.toast.create({
       message,
       duration: 4_000,
+      position: 'top'
     });
 
     await toast.present();
