@@ -4,8 +4,10 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { HttpAsyncResult } from 'src/app/models/interfaces/http-async-result';
+import { StorageAsyncResult } from 'src/app/models/interfaces/storage-async-result';
 import { CreateCategoryPayload } from 'src/app/models/payloads/create-category.payload';
 import { CategoryProxy } from 'src/app/models/proxies/category.proxy';
+import { CommentProxy } from 'src/app/models/proxies/comment.proxy';
 import { PaginatedCategoryProxy } from 'src/app/models/proxies/paginated-category.proxy';
 import { environment } from 'src/environments/environment';
 import { createCategoryMockup, getCategoriesMockup } from './category.mockup';
@@ -65,6 +67,6 @@ export class CategoryInteractor {
     .then(success => ({ success, error: undefined }))
     .catch(error => ({ success: undefined, error }));
   }
-
+  
   //#endregion
 }

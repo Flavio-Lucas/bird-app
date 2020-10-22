@@ -103,5 +103,25 @@ export class CommentInteractor {
       .then(success => ({ success, error: undefined }))
       .catch(error => ({ success: undefined, error }));
     }
+
+  /**
+   * metodo que salva um comentário no cache
+   *
+   * @param comment As informações do comentário
+   */
+  public async saveCommentCreated(comment: CommentProxy): Promise<StorageAsyncResult<boolean>> {
+    this.storage.ready().catch(console.error);
+  
+    const { success } = await this.storage.get(environment.keys.myComments)
+      .then( success => ({success, error: undefined}))
+      .catch(() => ({success: undefined, error: 'ocorreu um erro ao salvar o comentário'}));
+    return ;
+
+    const myComments = [...(success || []), comment];
+    return await this.storage.set(environment.keys.myComments, myComments)
+    .then( () => ({success: true, error: undefined}))
+    .catch(() => ({success: undefined, error: 'ocorreu um erro ao salvar o comentário'}));
+  }
+
   //#endregion
 }

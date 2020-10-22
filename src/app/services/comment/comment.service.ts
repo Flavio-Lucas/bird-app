@@ -86,10 +86,17 @@ export class CommentService {
    * @param payload conteudo do comentário
    */
   public async createComment(payload: CreateCommentPayload): Promise<[boolean, string]>{
-    const { error } = await this.interactor.createComment(payload);
+    const { error, success } = await this.interactor.createComment(payload);
     if (error) {
       return [false, 'Ocorreu um erro ao criar o comentário, tente novamente'];
     }
+
+    const { error: errorOnSave } = await this.interactor.saveCommentCreated(success);
+
+    if (errorOnSave){
+      console.error(errorOnSave);
+    }
+
     return [true, 'Comentário criado com sucesso'];
   }
   //#endregion
