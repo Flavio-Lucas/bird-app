@@ -1,8 +1,9 @@
 //#region Imports
 
-import { ApiProperty } from "@nestjs/swagger";
-import { Column, Entity } from "typeorm";
+import { ApiProperty, ApiPropertyOptional } from "@nestjs/swagger";
+import { Column, Entity, OneToMany } from "typeorm";
 import { BaseEntity } from '../../common/base-entity';
+import { CommentsEntity } from "./comment.entity";
 
 //#endregion
 
@@ -40,6 +41,13 @@ import { BaseEntity } from '../../common/base-entity';
   @Column({length: 7, nullable: false})
   @ApiProperty()
   color: string;
+
+  /**
+   * Lista de comentários desta categoria
+   */
+  @ApiPropertyOptional( { type: () => CommentsEntity } )
+  @OneToMany( () => CommentsEntity, comments => comments.categoryId )
+  comments?: CommentsEntity[];
 
   //#endregion
  }
