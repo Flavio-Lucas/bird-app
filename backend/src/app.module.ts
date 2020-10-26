@@ -1,6 +1,8 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+
+import { CategoryModule } from './modules/categories/category.module';
 import { TypeOrmService } from './modules/typeorm/type-orm.services';
 
 @Module({
@@ -11,8 +13,7 @@ import { TypeOrmService } from './modules/typeorm/type-orm.services';
     ConfigModule.forRoot({
       isGlobal: true,
     }),
+    CategoryModule,
   ],
-  controllers: [],
-  providers: [],
 })
 export class AppModule {}

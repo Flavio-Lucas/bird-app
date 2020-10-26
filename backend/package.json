@@ -10,7 +10,6 @@
     "migration": "npm run typeorm:cli -- migration:run",
     "add-migration": "npm run typeorm:cli -- migration:generate -n",
     "revert-migration": "npm run typeorm:cli -- migration:revert",
-    
     "prebuild": "rimraf dist",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",

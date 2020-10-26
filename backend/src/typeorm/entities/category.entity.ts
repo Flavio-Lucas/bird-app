@@ -45,9 +45,10 @@ import { CommentsEntity } from "./comment.entity";
   /**
    * Lista de comentários desta categoria
    */
-  @ApiPropertyOptional( { type: () => CommentsEntity } )
+  @ApiProperty( { type: () => CommentsEntity, isArray: true } )
   @OneToMany( () => CommentsEntity, comments => comments.categoryId )
   comments?: CommentsEntity[];
 
   //#endregion
- }
+}
+ 
