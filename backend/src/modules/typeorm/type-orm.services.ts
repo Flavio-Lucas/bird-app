@@ -33,6 +33,7 @@ export class TypeOrmService implements TypeOrmOptionsFactory {
       synchronize: this.config.get<boolean>('DB_SYNCHRONIZE'),
       migrationsRun: this.config.get<boolean>('DB_MIGRATIONS_RUN'),
       logging: this.config.get<boolean>('DB_LOGGING'),
+      logger: 'advanced-console',
       entities: [
         __dirname + '/../../typeorm/entities/**/*{.entity.ts,.entity.js}',
       ],
