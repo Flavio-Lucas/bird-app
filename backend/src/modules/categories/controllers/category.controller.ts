@@ -2,7 +2,6 @@
 
 import { Body, Controller, Get, NotFoundException, Param, Post, Query, UseInterceptors } from "@nestjs/common";
 import { ApiNotFoundResponse, ApiOkResponse, ApiOperation, ApiQuery, ApiTags } from "@nestjs/swagger";
-import { CategoryEntity } from "src/typeorm/entities/category.entity";
 import { CategoryProxy } from "../models/cateory.proxy";
 import { CreateCategoryPayload } from "../models/create-category.payload";
 import { PaginatedCategoryProxy } from "../models/paginated-category.proxy";

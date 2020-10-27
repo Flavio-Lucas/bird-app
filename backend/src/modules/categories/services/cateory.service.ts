@@ -1,10 +1,10 @@
 //#region Imports
 
-import { ForbiddenException, Injectable, NotFoundException } from "@nestjs/common";
+import { ForbiddenException, Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { CategoryEntity } from "src/typeorm/entities/category.entity";
 import { isValid } from "src/utils/functions";
-import { Like, Repository } from "typeorm";
+import { Repository } from "typeorm";
 import { CreateCategoryPayload } from "../models/create-category.payload";
 import { PaginatedCategoryProxy } from "../models/paginated-category.proxy";
 

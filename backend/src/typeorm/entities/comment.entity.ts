@@ -13,7 +13,9 @@ import { CategoryEntity } from "./category.entity";
 
  @Entity('comments')
  export class CommentsEntity extends BaseEntity {
+
   //#region Construtor 
+
   /**
    * Construtor padrão
    */
@@ -71,4 +73,6 @@ import { CategoryEntity } from "./category.entity";
   category?: CategoryEntity;
 
   //#endregion
+
  }
+ 

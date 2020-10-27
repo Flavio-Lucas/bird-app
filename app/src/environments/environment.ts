@@ -12,14 +12,15 @@ export const environment = {
     myComments: 'MY_COMMENTS_KEY',
   },
   api: {
-    baseUrl: 'http://localhost:4000',
+    baseUrl: 'http://localhost:3000',
     comment: {
-      list: '/comments?page={currentPage}&maxItens={maxItens}',
-      listByCategoryId: '/comments?page={currentPage}&maxItens={maxItens}&categoryId={categoryId}',
-      create: '/comments'
+      list: '/comments?page={currentPage}&maxItens={maxItens}&includeCategory=true',
+      listByCategoryId: '/comments?page={currentPage}&maxItens={maxItens}&includeCategory=true',
+      create: '/comments',
     },
     category: {
       list: '/categories?page={currentPage}&maxItens={maxItens}',
+      create: '/comments',
     },
   },
 };

@@ -1,14 +1,14 @@
 //#region imports
 
 import { ApiProperty } from '@nestjs/swagger';
-import { IsDefined, IsHexColor, IsString, MaxLength } from 'class-validator';
+import { IsDefined, IsHexColor, IsNumber, IsString, MaxLength } from 'class-validator';
 
 //#endregion
 
 /**
  * classe que representa o payload enviado para criar uma categoria
  */
-export class CreateCategoryPayload {
+export class CreateCommentPayload {
 
   /**
    * Mensagem deste comentário
@@ -50,6 +50,8 @@ export class CreateCategoryPayload {
    * Identificador da categoria a qual pertence este comentário
    */
   @ApiProperty()
+  @IsDefined({ message: 'É nessessário enviar a identificação da categoria' })
+  @IsNumber({}, {message: 'A identificação da categoria deve ser um numero'})
   categoryId: number;
 
 }
