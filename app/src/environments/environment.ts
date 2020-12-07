@@ -20,7 +20,7 @@ export const environment = {
     },
     category: {
       list: '/categories?page={currentPage}&maxItens={maxItens}',
-      create: '/comments',
+      create: '/categories',
     },
   },
 };
